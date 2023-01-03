@@ -8,8 +8,8 @@
             {{ count }}
         </div>
         <div>
-            <button>Tambah 1</button>
-            <button>Tambah 2</button>
+            <button @click="tambah()">Tambah 1</button>
+            <button @click="kurang()">Tambah 2</button>
         </div>
     </div>
 </template>
@@ -25,15 +25,13 @@
         methods: {
             ubahKata(){
                 this.messages = 'Mantapp'
-            }
+            },
             tambah(){
                 // this.count = this.count + 1
                 // this.count += 1
                 this.count++
-            }
+            },
             kurang(){
-                // this.count = this.count + 1
-                // this.count += 1
                 this.count--
             }
         }
