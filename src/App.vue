@@ -1,43 +1,18 @@
 <template>
     <div>
-        <h1 :title="messages">Halo Vue</h1>
-        <p>{{messages}}</p>
-        <button @click="ubahKata()">Ubah Kata</button>
-        <hr />
-        <div>
-            {{ count }}
-        </div>
-        <div>
-            <button @click="tambah()">Tambah 1</button>
-            <button @click="kurang()">Tambah 2</button>
-        </div>
+        <ul>
+            <li><router-link to="/">Home</router-link></li>
+            <li><router-link to="/about">About</router-link></li>
+        </ul>
+        <router-view></router-view>
+        <vue-progress-bar></vue-progress-bar>
     </div>
 </template>
 
 <script>
-    export default {
-        data(){
-            return{
-                messages: "Meledak",
-                count: 0
-            }
-        },
-        methods: {
-            ubahKata(){
-                this.messages = 'Mantapp'
-            },
-            tambah(){
-                // this.count = this.count + 1
-                // this.count += 1
-                this.count++
-            },
-            kurang(){
-                this.count--
-            }
-        }
+export default {
+    method() {
+        this.$Progress.finish
     }
+}
 </script>
-
-<style>
-    
-</style>
