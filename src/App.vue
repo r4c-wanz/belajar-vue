@@ -3,6 +3,11 @@
         <ul>
             <li><router-link to="/">Home</router-link></li>
             <li><router-link to="/about">About</router-link></li>
+            <ul>
+              Tutorial
+              <li><router-link to="/tutorial/1">01 Conditional</router-link></li>
+              <li><router-link to="/tutorial/2">02 Looping</router-link></li>
+            </ul>
         </ul>
         <router-view></router-view>
         <vue-progress-bar></vue-progress-bar>
@@ -12,30 +17,29 @@
 <script>
 export default {
     mounted() {
-      //  [App.vue specific] When App.vue is finish loading finish the progress bar
-      this.$Progress.finish();
+        //  [App.vue specific] When App.vue is finish loading finish the progress bar
+        this.$Progress.finish();
     },
     created() {
-      //  [App.vue specific] When App.vue is first loaded start the progress bar
-      this.$Progress.start();
-      //  hook the progress bar to start before we move router-view
-      this.$router.beforeEach((to, from, next) => {
-        //  does the page we want to go to have a meta.progress object
-        if (to.meta.progress !== undefined) {
-          let meta = to.meta.progress;
-          // parse meta tags
-          this.$Progress.parseMeta(meta);
-        }
-        //  start the progress bar
+        //  [App.vue specific] When App.vue is first loaded start the progress bar
         this.$Progress.start();
-        //  continue to next page
-        next();
-      });
-      //  hook the progress bar to finish after we've finished moving router-view
-      this.$router.afterEach((to, from) => {
-        //  finish the progress bar
-        this.$Progress.finish();
-      });
-    },
-    };
+        //  hook the progress bar to start before we move router-view
+        this.$router.beforeEach((to, from, next) => {
+            //  does the page we want to go to have a meta.progress object
+            if (to.meta.progress !== undefined) {
+            let meta = to.meta.progress;
+            // parse meta tags
+            this.$Progress.parseMeta(meta);
+            }
+            //  start the progress bar
+            this.$Progress.start();
+            //  continue to next page
+            next();
+        });
+        //  hook the progress bar to finish after we've finished moving router-view
+        this.$router.afterEach((to, from) => {
+                //  finish the progress bar
+                this.$Progress.finish();
+        });
+    }};
 </script>

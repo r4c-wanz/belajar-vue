@@ -10,6 +10,16 @@ const routes = [
         path: '/about',
         name: 'About',
         component: () => import('../pages/about.vue')
+    },
+    {
+        path: '/tutorial/1',
+        name: 'Conditional',
+        component: () => import('../pages/tutorial/01Conditional.vue')
+    },
+    {
+        path: '/tutorial/2',
+        name: 'Looping',
+        component: () => import('../pages/tutorial/02Looping.vue')
     }
 ]
 
