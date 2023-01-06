@@ -3,6 +3,11 @@ import App from './App.vue'
 
 import router from './router'
 
+// BOOTSTRAP
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap"
+import "@popperjs/core"
+
 // INI UNTUK PROGRESSBAR
 import VueProgressBar from "@aacassandra/vue3-progressbar";
 

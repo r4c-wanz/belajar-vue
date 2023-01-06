@@ -20,6 +20,11 @@ const routes = [
         path: '/tutorial/2',
         name: 'Looping',
         component: () => import('../pages/tutorial/02Looping.vue')
+    },
+    {
+        path: '/tutorial/3',
+        name: 'Components',
+        component: () => import('../pages/tutorial/03Components.vue')
     }
 ]
 
