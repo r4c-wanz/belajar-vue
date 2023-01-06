@@ -25,6 +25,11 @@ const routes = [
         path: '/tutorial/3',
         name: 'Components',
         component: () => import('../pages/tutorial/03Components.vue')
+    },
+    {
+        path: '/tutorial/4',
+        name: 'Lifecycle',
+        component: () => import('../pages/tutorial/04Lifecycle.vue')
     }
 ]
 
