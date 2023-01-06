@@ -1,3 +1,14 @@
 <template>
-    <div class="alert">Halo Broo</div>
+    <div class="alert">{{ text }}</div>
 </template>
+
+<script>
+export default {
+    props: {
+        text: {
+            type: String,
+            default: ''
+        }
+    }
+}
+</script>
