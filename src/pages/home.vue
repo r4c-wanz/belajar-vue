@@ -12,7 +12,7 @@
             <button @click="kurang()">Kurang 1</button>
         </div> -->
         <h1>Haloo {{ namaToko }}</h1>
-        <button @click="ubahToko()">Ubah Toko</button>
+        <button class="btn btn-primary" @click="ubahToko()">Ubah Toko</button>
     </div>
 </template>
 
