@@ -6,11 +6,11 @@
             <div class="col-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3" v-for="movie in movies" :key="movie.imdbID">
                 <div class="card mb-3">
                     <div class="card-header">
-                        <img :src="movie.Poster" alt="" class="w-100">
+                        <img :src="movie.Poster" alt="Movie Image" class="w-100">
                     </div>
                     <div class="card-body">
                         <h4>{{ movie.Title }}</h4>
-                        <p>Release Date: {{ movie.year }}</p>
+                        <p>Release Date: {{ movie.Year }}</p>
                         <hr>
                         <p>{{ movie.Type }}</p>
                     </div>
@@ -29,7 +29,7 @@
             }
         },
         created() {
-            fetch('http://www.omdbapi.com/?apikey=&s=').then(response => response.json()).then(data => {
+            fetch('http://www.omdbapi.com/?apikey=&s=&page=1').then(response => response.json()).then(data => {
                 console.log(data)
                 this.totalMovies = data.totalResults
                 this.movies = data.search
