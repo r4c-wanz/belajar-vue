@@ -1,16 +1,18 @@
 <template>
     <div class="container-fluid">
-        <h1 class="my-3">Movie List</h1>
-        <h2>Total Movie: </h2>
+        <h1 class="my-3 text-center">Movie List</h1>
+        <h2 class="text-center">Total Movie: {{ totalMovies }}</h2>
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3">
-                <div class="card">
+            <div class="col-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3" v-for="movie in movies" :key="movie.imdbID">
+                <div class="card mb-3">
                     <div class="card-header">
-
+                        <img :src="movie.Poster" alt="" class="w-100">
                     </div>
                     <div class="card-body">
-                        <h1>Lorem Ipsum</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident soluta perspiciatis cumque quam odit neque earum qui, accusamus laborum iste, illum vel atque minima aliquam rerum dolores sit optio voluptate?</p>
+                        <h4>{{ movie.Title }}</h4>
+                        <p>Release Date: {{ movie.year }}</p>
+                        <hr>
+                        <p>{{ movie.Type }}</p>
                     </div>
                 </div>
             </div>
@@ -22,12 +24,15 @@
     export default {
         data() {
             return {
-                movies: []
+                movies: [],
+                totalMovies: 0
             }
         },
         created() {
-            fetch('http://www.omdbapi.com/?apikey=&s=Godzilla').then(response => response.json()).then(data => {
+            fetch('http://www.omdbapi.com/?apikey=&s=').then(response => response.json()).then(data => {
                 console.log(data)
+                this.totalMovies = data.totalResults
+                this.movies = data.search
             })
         }
     }
