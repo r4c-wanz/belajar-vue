@@ -3,7 +3,7 @@
         <h1 class="my-3 text-center">Movie List</h1>
         <h2 class="text-center">Total Movie: {{ totalMovies }}</h2>
         <div class="my-3">
-            <input type="text" name="" id="" class="form-control w-100" placeholder="Search Here...">
+            <input type="text" v-model="keyword" id="" class="form-control w-100" placeholder="Search Here...">
         </div>
         <div class="row">
             <div class="col-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3" v-for="movie in movies" :key="movie.imdbID">
@@ -29,15 +29,27 @@
             return {
                 movies: [],
                 totalMovies: 0,
-                keywoard: ''
+                keyword: ''
+            }
+        },
+        watch: {
+            keyword(value) {
+                this.fetchMovie()
             }
         },
         created() {
-            fetch('http://www.omdbapi.com/?apikey=&s=&page=1').then(response => response.json()).then(data => {
-                console.log(data)
-                this.totalMovies = data.totalResults
-                this.movies = data.search
-            })
+            this.fetchMovie()
+        },
+        methods: {
+            fetchMovie() {
+                fetch(`http://www.omdbapi.com/?apikey=&s=${this.keyword}&page=1`).then(response => response.json()).then(data => {
+                    console.log(data)
+                    if(data.Response) {
+                        this.totalMovies = data.totalResults
+                        this.movies = data.Search
+                    }
+                })
+            }
         }
     }
 </script>
