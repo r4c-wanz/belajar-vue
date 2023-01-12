@@ -5,6 +5,7 @@
         <div class="my-3">
             <input type="text" v-model="keyword" id="" class="form-control w-100" placeholder="Search Here...">
         </div>
+        <div class="alert alert-danger" v-if="error">{{ error }}</div>
         <div class="row">
             <div class="col-12 col-md-6 col-lg-3 col-xl-3 col-xxl-3" v-for="movie in movies" :key="movie.imdbID">
                 <div class="card mb-3">
@@ -29,7 +30,9 @@
             return {
                 movies: [],
                 totalMovies: 0,
-                keyword: ''
+                keyword: '',
+                error: false,
+                loading: false
             }
         },
         watch: {
@@ -37,17 +40,19 @@
                 this.fetchMovie()
             }
         },
-        created() {
-            this.fetchMovie()
-        },
         methods: {
             fetchMovie() {
+                this.loading = true
                 fetch(`http://www.omdbapi.com/?apikey=&s=${this.keyword}&page=1`).then(response => response.json()).then(data => {
                     console.log(data)
-                    if(data.Response) {
+                    if(data.Response == 'True') {
                         this.totalMovies = data.totalResults
                         this.movies = data.Search
+                    }else {
+                        this.error = data.Error
                     }
+
+                    this.loading = false
                 })
             }
         }
