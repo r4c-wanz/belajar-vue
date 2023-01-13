@@ -19,7 +19,7 @@
                                 <img :src="movie.Poster" alt="Movie Image" class="w-100">
                             </div>
                             <div class="card-body">
-                                <h4><router-link to="'movie/'+movie.imdbID">{{ movie.Title }}</router-link></h4>
+                                <h4><router-link :to="'movie/'+movie.imdbID">{{ movie.Title }}</router-link></h4>
                                 <p>Release Date: {{ movie.Year }}</p>
                                 <hr>
                                 <p>{{ movie.Type }}</p>
