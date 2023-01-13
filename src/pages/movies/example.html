@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+    <title>NAMA-NAMA Negara</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="text-center">NAMA-NAMA NEGARA</h2>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered" id="myTable">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nama Negara</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Indonesia</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Jepang</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Belanda</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Thailand</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Filipina</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Singapura</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Malaysia</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Mesir</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Amerika Serikat</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Brazil</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>Qatar</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>Jerman</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>Rusia</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>Ukraina</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>China</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        $(document).ready( function () {
+            $('#myTable').DataTable();
+        } );
+    </script>
+</body>
+</html>
