@@ -32,7 +32,6 @@
                         <li class="page-item"><a @click="page--" class="page-link" href="#">Previous</a></li>
                         <div v-for="page in pagination" :key="page.pageId">
                             <li class="page-item"><a class="page-link" href="">{{ pagination }}</a></li>
-
                         </div>
                         <li class="page-item"><a @click="page++" class="page-link" href="#">Next</a></li>
                     </ul>
@@ -69,10 +68,6 @@
                     this.page = 1
                 }
                 this.fetchMovie()
-            },
-            pagination() {
-                
-                this.pagination()
             }
         },
         methods: {
@@ -87,19 +82,7 @@
                     }else {
                         this.error = data.Error
                     }
-
                     this.loading = false
-                })
-            },
-            pagination() {
-                fetch(`http://www.omdbapi.com/?apikey=&s=${this.keyword}&page=${this.page}`).then(response => response.json()).then(data => {
-                    console.log(data)
-                    counter = 1;
-                    while( counter <  data.totalResults){
-                        console.log( counter );
-                        counter++;
-                        console.log( 'Test' );
-                    }
                 })
             }
         }
