@@ -22,6 +22,7 @@
                                 Tutorial
                             </a>
                             <ul class="dropdown-menu">
+                                <li><router-link class="dropdown-item" to="/tutorial/0">00 Variable</router-link></li>
                                 <li><router-link class="dropdown-item" to="/tutorial/1">01 Conditional</router-link></li>
                                 <li><router-link class="dropdown-item" to="/tutorial/2">02 Looping</router-link></li>
                                 <li><router-link class="dropdown-item" to="/tutorial/3">03 Components</router-link></li>

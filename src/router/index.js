@@ -12,6 +12,11 @@ const routes = [
         component: () => import('../pages/about.vue')
     },
     {
+        path: '/tutorial/0',
+        name: 'Variable',
+        component: () => import('../pages/tutorial/00Variable.vue')
+    },
+    {
         path: '/tutorial/1',
         name: 'Conditional',
         component: () => import('../pages/tutorial/01Conditional.vue')
