@@ -27,6 +27,8 @@
                                 <li><router-link class="dropdown-item" to="/tutorial/2">02 Looping</router-link></li>
                                 <li><router-link class="dropdown-item" to="/tutorial/3">03 Components</router-link></li>
                                 <li><router-link class="dropdown-item" to="/tutorial/4">04 Lifecycle</router-link></li>
+                                <li><router-link class="dropdown-item" to="/tutorial/5">05 Computed</router-link></li>
+                                <li><router-link class="dropdown-item" to="/tutorial/6">06 Watch</router-link></li>
                             </ul>
                         </li>
                     </ul>

@@ -37,6 +37,16 @@ const routes = [
         component: () => import('../pages/tutorial/04Lifecycle.vue')
     },
     {
+        path: '/tutorial/5',
+        name: 'Computed',
+        component: () => import('../pages/tutorial/05computed.vue')
+    },
+    {
+        path: '/tutorial/6',
+        name: 'Watch',
+        component: () => import('../pages/tutorial/06watch.vue')
+    },
+    {
         path: '/movie',
         name: 'Movie Home',
         component: () => import('../pages/movies/Home.vue')
